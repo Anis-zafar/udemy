@@ -9,6 +9,7 @@ app.use(express.json());
 const router = require("./routes/route");
 const prompt = require("prompt");
 const { getRandomValues } = require("crypto");
+const Math = require("math");
 
 let start = Date.now();
 app.use(morgan("dev"));
@@ -202,31 +203,95 @@ console.clear();
 
 // console.log(student.name, student.sclass,student.rollno);
 
-let customers_data = {
-  Ben10: [22, 30, 11, 17, 15, 52, 27, 12],
-  Sameer: [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
-  Zeeshan: [22, 30, 11, 5, 17, 30, 6, 57],
-};
+// let customers_data = {
+//   Ben10: [22, 30, 11, 17, 15, 52, 27, 12],
+//   Sameer: [5, 17, 30, 33, 40, 22, 26, 10, 11, 45],
+//   Zeeshan: [22, 30, 11, 5, 17, 30, 6, 57],
+// };
 
-let sum = customers_data.Ben10.reduce(function (a, b) { return a + b })
-if (customers_data.Ben10.length >= 5&&sum>=20) {
-  console.log("premium mermbership");
-} else {
-  console.log("not much order to grant a membership");
-}
-let sum1 = customers_data.Sameer.reduce(function (a, b) {
-  return a + b;
-});
-if (customers_data.Sameer.length >= 5 && sum >= 20) {
-  console.log("premium mermbership");
-} else {
-  console.log("not much order to grant a membership");
-}
-let sum2= customers_data.Zeeshan.reduce(function (a, b) {
-  return a + b;
-});
-if (customers_data.Zeeshan.length >= 5 && sum >= 20) {
-  console.log("premium mermbership");
-} else {
-  console.log("not much order to grant a membership");
-}
+// let sum = customers_data.Ben10.reduce(function (a, b) { return a + b })
+// if (customers_data.Ben10.length >= 5&&sum>=20) {
+//   console.log("premium mermbership");
+// } else {
+//   console.log("not much order to grant a membership");
+// }
+// let sum1 = customers_data.Sameer.reduce(function (a, b) {
+//   return a + b;
+// });
+// if (customers_data.Sameer.length >= 5 && sum >= 20) {
+//   console.log("premium mermbership");
+// } else {
+//   console.log("not much order to grant a membership");
+// }
+// let sum2= customers_data.Zeeshan.reduce(function (a, b) {
+//   return a + b;
+// });
+// if (customers_data.Zeeshan.length >= 5 && sum >= 20) {
+//   console.log("premium mermbership");
+// } else {
+//   console.log("not much order to grant a membership");
+// }
+
+// let arr = ["asdf", "sd", "something", "right", "position"];
+
+// function findLongestString(arr) {
+//   let longestString = "";
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i].length > longestString.length) {
+//       longestString = arr[i];
+//     }
+//   }
+//   return longestString;
+// }
+// const arr2 = findLongestString(arr);
+// console.log(arr2);
+
+// const arr = [NaN, 0, 15, false, -22, "", undefined, 47, null, 94];
+// // function checkarr(arr) {
+// //     for (let index = 0; index < arr.length; index++) {
+// //       if (arr[index] != Number)
+// //         arr.splice(arr[index], 1)
+// //       }
+// //       console.log(arr);
+// // }
+
+// // checkarr(arr)
+// function removeFalsyValues(arr) {
+//   return arr.filter(Number);
+// }
+// let filteredArr = removeFalsyValues(arr);
+// console.log(filteredArr);
+
+// arr1 = [1, 2, 3];
+// arr2 = [3, 4, 5];
+// var arr1 = [4, 11, 12, 23, 46, 65, 73, 98];
+// var arr2 = [7, 13, 25, 46, 58, 70, 84];
+// function checkCommonElement(arr1, arr2) {
+//   let i = 0;
+//   let j = 0;
+
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr1[i] === arr2[j]) {
+//       return true;
+//     } else if (arr1[i] < arr2[j]) {
+//       i++;
+//     } else {
+//       j++;
+//     }
+//   }
+
+//   return false;
+// }
+// const result = checkCommonElement(arr1, arr2);
+// console.log(result);
+
+var arr1 = [4, 11, 25, 23, 499, 65, 70, 73, 98];
+var arr2 = [7, 13, 5, 46, 58, 80, 84];
+
+const ex = (ar1, ar2) => {
+  return ar1.some((i) => ar2.includes(i));
+};
+console.log(ex(arr1, arr2));
+
+// const data = arr1.find((i) => arr2.includes(i));
+// console.log(data);
